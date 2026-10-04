@@ -1,0 +1,4 @@
+# raw Instagram downloads (cropped versions live in assets/img)
+assets/ig/
+.claude/
+__pycache__/

@@ -1,0 +1,265 @@
+<!doctype html>
+<!--
+  Bee Group Patisserie — Damascus
+  Source file: edit THIS file, then run `python tools/build.py` to produce index.html
+  (the build step inlines the traced vector logo).
+
+  Signature motion: "The Bee's Flight" — the bee from the logo leaves the intro and
+  flies down the whole site on a honey trail that is drawn as you scroll.
+  Techniques: logo self-assembly intro, drip-curtain reveal, masked line reveals,
+  word-by-word scroll lighting, pinned horizontal gallery, honey-drip section edges,
+  honeycomb assembly (scatter → hive), sticky stacking cards, velocity marquee,
+  6-layer depth parallax. Reduced-motion users get a calm, static page.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bee Patisserie — A taste you'll always remember</title>
+<meta name="description" content="Bee Group Patisserie, Damascus. Luxury pastries, tarts and custom cakes made with the finest imported ingredients. Mazzeh & Salhieh.">
+<meta name="theme-color" content="#f7931e">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@400;500;600;700&family=El+Messiri:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-loading">
+<a class="skip-link" href="#story">Skip to content</a>
+
+{{SPRITE}}
+
+<!-- ============ INTRO: the logo assembles itself ============ -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__bg"><div class="loader__hex"></div><svg class="loader__drips" viewBox="0 0 1440 160" preserveAspectRatio="none"></svg></div>
+  <div class="loader__stage">
+    {{LOGO_FULL}}
+    <p class="loader__tag"><span>A taste you'll always remember</span><span lang="ar" dir="rtl">طعمٌ لا يُنسى</span></p>
+  </div>
+  <div class="loader__meter"><i></i><b class="loader__count">0</b></div>
+</div>
+
+<!-- ============ SIGNATURE: the bee's flight ============ -->
+<svg class="flight" aria-hidden="true">
+  <defs>
+    <clipPath id="flightClip"><rect class="flight__reveal" x="-50" y="0" width="100" height="0"/></clipPath>
+  </defs>
+  <path class="flight__trail" fill="none" clip-path="url(#flightClip)"/>
+</svg>
+<div class="guide-bee" aria-hidden="true">{{GUIDE_BEE}}</div>
+
+<div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <a href="#top" class="nav__logo" aria-label="Bee Patisserie home"><svg><use href="#sym-logo"/></svg></a>
+  <nav class="nav__links" aria-label="Main">
+    <a href="#story">Story</a>
+    <a href="#signature">Signatures</a>
+    <a href="#occasions">Occasions</a>
+    <a href="#visit">Visit</a>
+  </nav>
+  <a class="btn btn--small nav__cta magnetic" href="tel:+963991384000"><span>Order now</span></a>
+  <button class="nav__burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
+</header>
+<div class="menu" hidden>
+  <a href="#story">Story</a><a href="#signature">Signatures</a><a href="#occasions">Occasions</a><a href="#visit">Visit</a>
+  <a href="tel:+963991384000" class="menu__call">0991 384 000</a>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero scene" data-fly="c">
+  <div class="layer depth-0" data-depth="0" aria-hidden="true"><div class="hero__glow"></div><div class="hex-bg"></div></div>
+
+  <div class="layer depth-2 hero__photos" data-depth="2" aria-hidden="true">
+    <figure class="arch arch--a" data-speed="-0.25"><img src="assets/img/tart.jpg" alt=""></figure>
+    <figure class="arch arch--b" data-speed="-0.4"><img src="assets/img/choco.jpg" alt=""></figure>
+    <figure class="arch arch--c" data-speed="-0.15"><img src="assets/img/dome.jpg" alt=""></figure>
+    <figure class="arch arch--d" data-speed="-0.55"><img src="assets/img/lotus.jpg" alt=""></figure>
+  </div>
+
+  <div class="layer depth-4 hero__copy" data-depth="4">
+    <p class="eyebrow hero__eyebrow"><span>Bee Group</span><i></i><span>Patisserie</span><i></i><span>Damascus</span></p>
+    <h1 class="hero__title">
+      <span class="line"><span>A taste</span></span>
+      <span class="line"><span>you'll <em>always</em></span></span>
+      <span class="line"><span>remember.</span></span>
+    </h1>
+    <p class="hero__ar" lang="ar" dir="rtl">طعمٌ لا يُنسى</p>
+    <p class="hero__sub">Luxury pastries, tarts and custom cakes, made from the finest imported ingredients and finished by hand every morning.</p>
+    <div class="hero__ctas">
+      <a href="#signature" class="btn magnetic"><span>Discover the collection</span></a>
+      <a href="#occasions" class="btn btn--ghost magnetic"><span>Custom cakes</span></a>
+    </div>
+  </div>
+
+  <div class="layer depth-5" data-depth="5" aria-hidden="true"><div class="motes"></div></div>
+  <p class="hero__scroll" aria-hidden="true"><span>Scroll</span> <em>follow the bee</em></p>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Croissants</span><b>✦</b><span>Custom Cakes</span><b>✦</b><span>Tarts</span><b>✦</b><span lang="ar">حلويات فاخرة</span><b>✦</b><span>Gelato</span><b>✦</b><span>Donuts</span><b>✦</b><span>Ramadan Specials</span><b>✦</b><span>Savory Bakes</span><b>✦</b>
+  </div>
+</div>
+
+<!-- ============ MANIFESTO (word lighting) ============ -->
+<section class="manifesto scene" id="story" data-fly="r">
+  <div class="layer depth-0" aria-hidden="true"><div class="hex-bg hex-bg--soft"></div></div>
+  <div class="manifesto__inner layer depth-4">
+    <p class="eyebrow">Our story</p>
+    <p class="manifesto__text" data-light>Damascus knows its sweets. So we chose <em>the harder road.</em> We bring in the ingredients other kitchens won't pay for, then let skilled hands take their time. It costs more. <em>You'll taste why.</em></p>
+    <p class="manifesto__ar" lang="ar" dir="rtl">دمشق تعرف الحلويات جيداً… لذلك اخترنا الطريق الأصعب: أجود المكوّنات المستوردة، ويدٌ تعمل بصبر.</p>
+    <figure class="manifesto__stamp" aria-hidden="true">
+      <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100 100 m-78 0 a78 78 0 1 1 156 0 a78 78 0 1 1 -156 0"/></defs>
+        <text><textPath href="#circ">FINEST INGREDIENTS · HANDMADE DAILY · DAMASCUS · </textPath></text></svg>
+      <svg class="manifesto__stamp-bee"><use href="#sym-bee"/></svg>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ SIGNATURES (horizontal) ============ -->
+<section class="signature" id="signature" data-fly="l">
+  <svg class="drips drips--top" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true"></svg>
+  <div class="signature__pin">
+    <header class="signature__head">
+      <p class="eyebrow">The signatures</p>
+      <h2 class="reveal-lines"><span class="line"><span>Made to be</span></span><span class="line"><span><em>remembered.</em></span></span></h2>
+      <p class="signature__hint" aria-hidden="true">Keep scrolling →</p>
+    </header>
+    <div class="signature__track">
+      <article class="card">
+        <figure class="card__img"><img src="assets/img/tart.jpg" alt="Walnut lattice tart dusted with powdered sugar" loading="lazy"></figure>
+        <div class="card__body"><span class="card__no">01</span><h3>The Art of <em>Tart</em></h3><p class="card__ar" lang="ar" dir="rtl">فنّ التارت</p><p>A buttery lattice crust, whole walnuts and a slow bake until everything turns golden.</p><p class="tags">Walnut · Butter crust · Baked daily</p></div>
+      </article>
+      <article class="card">
+        <figure class="card__img"><img src="assets/img/choco.jpg" alt="Chocolate mousse cake topped with a chocolate rose" loading="lazy"></figure>
+        <div class="card__body"><span class="card__no">02</span><h3>Sweetness, <em>Amplified</em></h3><p class="card__ar" lang="ar" dir="rtl">حلاوة مضاعفة</p><p>Layers of dark chocolate mousse and sponge, crowned with a hand-shaped chocolate rose.</p><p class="tags">Dark chocolate · Mousse · Hand-finished</p></div>
+      </article>
+      <article class="card">
+        <figure class="card__img"><img src="assets/img/dome.jpg" alt="White chocolate dome cake with white pearls" loading="lazy"></figure>
+        <div class="card__body"><span class="card__no">03</span><h3>Too Good to <em>Share</em></h3><p class="card__ar" lang="ar" dir="rtl">أطيب من أن تُشارك</p><p>A white chocolate dome over a chocolate heart, circled with crisp white pearls.</p><p class="tags">White chocolate · Dome · Individual</p></div>
+      </article>
+      <article class="card">
+        <figure class="card__img"><img src="assets/img/lotus.jpg" alt="Two tarts: toasted marshmallow and Lotus biscuit" loading="lazy"></figure>
+        <div class="card__body"><span class="card__no">04</span><h3>This or <em>That?</em></h3><p class="card__ar" lang="ar" dir="rtl">هذه أم تلك؟</p><p>Toasted marshmallow or caramelised Lotus. The hardest decision you'll make today.</p><p class="tags">Marshmallow · Lotus · Tartlets</p></div>
+      </article>
+      <article class="card">
+        <figure class="card__img"><img src="assets/img/savory.jpg" alt="Savory pastry with mushrooms, olives and peppers" loading="lazy"></figure>
+        <div class="card__body"><span class="card__no">05</span><h3>The Reward <em>You Deserve</em></h3><p class="card__ar" lang="ar" dir="rtl">المكافأة التي تستحقها</p><p>Golden savory bakes with mushrooms, olives and peppers, for the moments that call for salt.</p><p class="tags">Savory · Fresh from the oven</p></div>
+      </article>
+      <article class="card">
+        <figure class="card__img"><img src="assets/img/icecream.jpg" alt="Smiling woman holding a gelato cone" loading="lazy"></figure>
+        <div class="card__body"><span class="card__no">06</span><h3>Cold, <em>Creamy</em></h3><p class="card__ar" lang="ar" dir="rtl">بارد وكريمي</p><p>Silky scoops in crisp cones. Summer in Damascus, sorted.</p><p class="tags">Gelato · Cones · Seasonal</p></div>
+      </article>
+      <article class="card">
+        <figure class="card__img"><img src="assets/img/donuts.jpg" alt="Orange Bee Patisserie box of donuts next to a fruit and sandwich box" loading="lazy"></figure>
+        <div class="card__body"><span class="card__no">07</span><h3>Sweeter with <em>Bee</em></h3><p class="card__ar" lang="ar" dir="rtl">أحلى مع بي</p><p>Glazed donuts and lunch boxes in the orange box everyone recognises.</p><p class="tags">Donuts · Boxes · School days</p></div>
+      </article>
+    </div>
+    <div class="signature__progress" aria-hidden="true"><i></i></div>
+  </div>
+</section>
+
+<!-- ============ THE BEE STANDARD ============ -->
+<section class="standard scene" data-fly="r">
+  <div class="layer depth-0" aria-hidden="true"><div class="hex-bg hex-bg--soft"></div></div>
+  <div class="standard__inner layer depth-4">
+    <p class="eyebrow">The Bee standard</p>
+    <h2 class="reveal-lines"><span class="line"><span>Why a piece of Bee</span></span><span class="line"><span>costs a little <em>more.</em></span></span></h2>
+    <div class="pillars">
+      <article class="pillar"><svg class="pillar__hex" viewBox="0 0 100 115" aria-hidden="true"><path d="M50 3 97 30v55L50 112 3 85V30z"/></svg><span class="pillar__n">I</span><h3>Imported, never compromised</h3><p>Special ingredients brought in from abroad, because some flavours can't be substituted.</p></article>
+      <article class="pillar"><svg class="pillar__hex" viewBox="0 0 100 115" aria-hidden="true"><path d="M50 3 97 30v55L50 112 3 85V30z"/></svg><span class="pillar__n">II</span><h3>Made fresh, every day</h3><p>Croissants, tarts and cakes leave the oven each morning. Nothing waits around.</p></article>
+      <article class="pillar"><svg class="pillar__hex" viewBox="0 0 100 115" aria-hidden="true"><path d="M50 3 97 30v55L50 112 3 85V30z"/></svg><span class="pillar__n">III</span><h3>Finished by hand</h3><p>Every rose, glaze and lattice is shaped by a pastry chef, one piece at a time.</p></article>
+    </div>
+    <div class="stats">
+      <div class="stat"><b data-count="58.7" data-suffix="K">0</b><span>Instagram followers</span></div>
+      <div class="stat"><b data-count="2">0</b><span>Homes in Damascus</span></div>
+      <div class="stat"><b data-count="1">0</b><span>Standard: the finest</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE HIVE (honeycomb assembly) ============ -->
+<section class="hive" data-fly="l">
+  <div class="hive__pin">
+    <div class="hive__head">
+      <p class="eyebrow">Life at the hive</p>
+      <h2 class="reveal-lines"><span class="line"><span>Sweet moments</span></span><span class="line"><span>live <em>here.</em></span></span></h2>
+    </div>
+    <div class="comb" aria-label="Moments at Bee Patisserie">
+      <figure class="cell cell--core"><svg aria-hidden="true"><use href="#sym-bee"/></svg><figcaption>@bee_patisserie</figcaption></figure>
+      <figure class="cell"><img src="assets/img/retro.jpg" alt="Woman in retro outfit enjoying a chocolate drink" loading="lazy"></figure>
+      <figure class="cell"><img src="assets/img/savory.jpg" alt="Woman biting into a savory pastry" loading="lazy"></figure>
+      <figure class="cell"><img src="assets/img/kid.jpg" alt="Little girl eating outside the Bee shop" loading="lazy"></figure>
+      <figure class="cell"><img src="assets/img/staff.jpg" alt="Bee Patisserie team member in the shop" loading="lazy"></figure>
+      <figure class="cell"><img src="assets/img/cupcake.jpg" alt="Woman holding a chocolate cupcake" loading="lazy"></figure>
+      <figure class="cell"><img src="assets/img/store.jpg" alt="Bee Patisserie counter and orange cake boxes" loading="lazy"></figure>
+    </div>
+    <a class="hive__ig magnetic" href="https://www.instagram.com/bee_patisserie/" target="_blank" rel="noopener"><span>Follow the hive on Instagram ↗</span></a>
+  </div>
+</section>
+
+<!-- ============ OCCASIONS (stacking cards) ============ -->
+<section class="occasions" id="occasions" data-fly="r">
+  <div class="occasions__head">
+    <p class="eyebrow">Custom cakes & pastries</p>
+    <h2 class="reveal-lines"><span class="line"><span>For every</span></span><span class="line"><span><em>occasion.</em></span></span></h2>
+    <p>Tell us the moment and we'll design the cake around it. Every design is made to order.</p>
+  </div>
+  <div class="stack">
+    <article class="occ occ--honey"><div class="occ__txt"><span class="occ__no">01</span><h3>Birthdays</h3><p>Cakes designed around the person, from first candles to milestone years.</p></div><p class="occ__art" lang="ar" dir="rtl">عيد ميلاد</p></article>
+    <article class="occ occ--cocoa"><div class="occ__txt"><span class="occ__no">02</span><h3>Ramadan & Eid</h3><p>Ramadan specials for iftar tables and gift boxes for Eid visits.</p></div><p class="occ__art" lang="ar" dir="rtl">رمضان كريم</p></article>
+    <article class="occ occ--cream"><div class="occ__txt"><span class="occ__no">03</span><h3>Christmas & New Year</h3><p>Seasonal collections and festive cakes for the end of the year.</p></div><p class="occ__art" lang="ar" dir="rtl">ميلاد مجيد</p></article>
+    <article class="occ occ--ink"><div class="occ__txt"><span class="occ__no">04</span><h3>Engagements & Weddings</h3><p>Tiered centrepieces and dessert tables built to match the day.</p></div><p class="occ__art" lang="ar" dir="rtl">ألف مبروك</p></article>
+    <article class="occ occ--photo"><div class="occ__txt"><span class="occ__no">05</span><h3>Just because</h3><p>Tuesday afternoon, a good mood, a craving. That counts too.</p><a class="btn magnetic" href="tel:+963991384000"><span>Call to order · 0991 384 000</span></a></div><figure class="occ__img"><img src="assets/img/donuts.jpg" alt="" loading="lazy"></figure></article>
+  </div>
+</section>
+
+<!-- ============ VISIT ============ -->
+<section class="visit" id="visit" data-fly="l">
+  <svg class="drips drips--top drips--cream" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true"></svg>
+  <div class="visit__inner">
+    <p class="eyebrow">Come by the hive</p>
+    <h2 class="reveal-lines"><span class="line"><span>Two homes in</span></span><span class="line"><span><em>Damascus.</em></span></span></h2>
+    <div class="branches">
+      <article class="branch">
+        <p class="branch__ar" lang="ar" dir="rtl">المزة</p>
+        <h3>Mazzeh</h3>
+        <p>Orfali Building, Fayez Mansour St.<br>Mazzeh, Damascus</p>
+        <p class="branch__tel"><a href="tel:+963991384000">0991 384 000</a><a href="tel:+963116110951">011 611 0951</a></p>
+        <div class="branch__links"><a href="https://www.google.com/maps/search/?api=1&query=Bee+Patisserie+Mazzeh+Damascus" target="_blank" rel="noopener">Directions ↗</a><a href="https://www.facebook.com/beepatisseire/" target="_blank" rel="noopener">Facebook ↗</a></div>
+      </article>
+      <article class="branch">
+        <p class="branch__ar" lang="ar" dir="rtl">الصالحية</p>
+        <h3>Salhieh</h3>
+        <p>Salhieh<br>Damascus</p>
+        <p class="branch__tel"><a href="tel:+963991384000">0991 384 000</a></p>
+        <div class="branch__links"><a href="https://www.google.com/maps/search/?api=1&query=Bee+Patisserie+Salhieh+Damascus" target="_blank" rel="noopener">Directions ↗</a><a href="https://www.facebook.com/beepatisserie.salhieh/" target="_blank" rel="noopener">Facebook ↗</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" data-fly="c">
+  <svg class="drips drips--top drips--cocoa" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true"></svg>
+  <div class="footer__big" aria-hidden="true"><svg><use href="#sym-word"/></svg><svg class="footer__bee"><use href="#sym-bee"/></svg></div>
+  <div class="footer__row">
+    <p class="footer__tag">A taste you'll always remember · <span lang="ar" dir="rtl">طعمٌ لا يُنسى</span></p>
+    <nav class="footer__links" aria-label="Social"><a href="https://www.instagram.com/bee_patisserie/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/beepatisseire/" target="_blank" rel="noopener">Facebook</a><a href="tel:+963991384000">Call</a></nav>
+    <p class="footer__copy">© <span class="year">2026</span> Bee Group Patisserie · Damascus, Syria</p>
+  </div>
+</footer>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
